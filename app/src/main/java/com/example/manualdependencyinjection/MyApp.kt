@@ -1,16 +1,8 @@
 package com.example.manualdependencyinjection
 
 import android.app.Application
-import com.example.manualdependencyinjection.di.AppModule
-import com.example.manualdependencyinjection.di.AppModuleImpl
+import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.android.lifecycle.HiltViewModel
 
-class MyApp: Application() {
-    companion object {
-        lateinit var appModule: AppModule;
-    }
-
-    override fun onCreate() {
-        super.onCreate()
-        appModule = AppModuleImpl(this)
-    }
-}
+@HiltAndroidApp
+class MyApp: Application()
